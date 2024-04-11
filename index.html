@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
@@ -13,17 +14,43 @@
 <body>
 
     <main>
-        <section>
-            <div>
-                <h2>
-                    Калькулятор утилизации отходов
-                </h2>
-                <a href="./assets/pages/calc-util-v1.html">Вариант 1</a>
-                <a href="#">Вариант 2</a>
-                <a href="#">Вариант 3</a>
+        <section class="calc-wrapper  variant-1">
+            <div class="content">
+                <h3 class="title">
+                    Заполните необходимые данные и получите расчёт стоимости <span>утилизации отходов</span>  по указанным параметрам
+                </h3>
+                <div class="calculator">
+                    <p class="calc-title">Рассчитать стоимость утилизации отходов</p>
+                    <div class="custom-select">
+                        <div class="city-input custom-input">
+                            <p data-current="0">Выберите город</p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.33017 8.33017C5.54165 8.11876 5.82843 8 6.12745 8C6.42648 8 6.71326 8.11876 6.92473 8.33017L12.5068 13.9123L18.0889 8.33017C18.3016 8.12475 18.5864 8.01109 18.8821 8.01366C19.1778 8.01623 19.4606 8.13483 19.6697 8.34391C19.8788 8.55299 19.9974 8.83583 20 9.13151C20.0025 9.42719 19.8889 9.71204 19.6834 9.92473L13.3041 16.3041C13.0926 16.5155 12.8058 16.6343 12.5068 16.6343C12.2078 16.6343 11.921 16.5155 11.7095 16.3041L5.33017 9.92473C5.11876 9.71326 5 9.42648 5 9.12745C5 8.82843 5.11876 8.54165 5.33017 8.33017Z" fill="black"/>
+                            </svg>
+                        </div>
+
+                    </div>
+                    <div class="custom-select">
+                        <div class="custom-input">
+                            <p data-current="0" class="choose">Утилизация и обезвреживание отходов</p>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.33017 8.33017C5.54165 8.11876 5.82843 8 6.12745 8C6.42648 8 6.71326 8.11876 6.92473 8.33017L12.5068 13.9123L18.0889 8.33017C18.3016 8.12475 18.5864 8.01109 18.8821 8.01366C19.1778 8.01623 19.4606 8.13483 19.6697 8.34391C19.8788 8.55299 19.9974 8.83583 20 9.13151C20.0025 9.42719 19.8889 9.71204 19.6834 9.92473L13.3041 16.3041C13.0926 16.5155 12.8058 16.6343 12.5068 16.6343C12.2078 16.6343 11.921 16.5155 11.7095 16.3041L5.33017 9.92473C5.11876 9.71326 5 9.42648 5 9.12745C5 8.82843 5.11876 8.54165 5.33017 8.33017Z" fill="black"/>
+                            </svg>
+                        </div>
+                        <ul class="custom-select-list">
+                            <li data-value="0">Утилизация и обезвреживание отходов;</li>
+                            <li data-value="1">Зачистка резервуаров;</li>
+                            <li data-value="2">Рекультивация</li>
+                        </ul>
+
+                    </div>
+                </div>
+
             </div>
+
+
         </section>
     </main>
-
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

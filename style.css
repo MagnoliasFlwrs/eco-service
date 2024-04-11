@@ -3,6 +3,11 @@
   margin: 0;
   box-sizing: border-box; }
 
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
 .content {
   max-width: calc(1040px + 16px * 2);
   padding: 0 16px;
@@ -12,10 +17,10 @@
   padding: 70px 0 65px; }
 
 .variant-1 {
-  background-image: url("./assets/images/image 1.png"), url("./assets/images/ecologist 1.png");
+  background-image: url("./assets/images/ecologist 1.png"), url("./assets/images/image 1.png");
   background-repeat: no-repeat , no-repeat;
-  background-position: center , bottom right;
-  background-size: cover , auto; }
+  background-position: bottom right, center;
+  background-size: auto, cover; }
   .variant-1 .title {
     color: #fff;
     font-family: Montserrat;
@@ -45,5 +50,57 @@
       font-weight: 600;
       line-height: 35.26px;
       text-align: center; }
+    .variant-1 .calculator .custom-select {
+      position: relative; }
+      .variant-1 .calculator .custom-select .custom-input {
+        width: 100%;
+        height: 60px;
+        gap: 0px;
+        border-radius: 30px;
+        border: 1px solid #D6D6D6;
+        background: #F6F6F6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 27px; }
+        .variant-1 .calculator .custom-select .custom-input p {
+          font-family: Montserrat;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 17.07px;
+          text-align: left;
+          color: #B1B1B1; }
+      .variant-1 .calculator .custom-select .custom-select-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        padding: 20px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        border-radius: 10px;
+        background: #F9F9FA;
+        box-shadow: 0px 15px 14px -8px rgba(174, 181, 194, 0.5);
+        width: 100%;
+        display: none; }
+        .variant-1 .calculator .custom-select .custom-select-list.active {
+          display: flex; }
+        .variant-1 .calculator .custom-select .custom-select-list li {
+          color: #1A2A37;
+          font-family: Montserrat;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 100%;
+          /* 20px */
+          cursor: pointer; }
+          .variant-1 .calculator .custom-select .custom-select-list li:first-child {
+            width: 100%;
+            display: flex;
+            justify-content: space-between; }
+            .variant-1 .calculator .custom-select .custom-select-list li:first-child::after {
+              content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M5.29289 14.7071C5.68342 15.0976 6.31658 15.0976 6.70711 14.7071L12 9.41421L17.2929 14.7071C17.6834 15.0976 18.3166 15.0976 18.7071 14.7071C19.0976 14.3166 19.0976 13.6834 18.7071 13.2929L12.7071 7.29289C12.3166 6.90237 11.6834 6.90237 11.2929 7.29289L5.29289 13.2929C4.90237 13.6834 4.90237 14.3166 5.29289 14.7071Z' fill='%230D0D0D'/%3E%3C/svg%3E");
+              display: block; }
 
 /*# sourceMappingURL=style.css.map */
