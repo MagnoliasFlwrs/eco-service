@@ -300,12 +300,111 @@ const contactModalClose = document.querySelector('.contact-modal .close-row span
 
 function showContactModal(btn) {
     btn.addEventListener('click', (e) => {
-        contactModal.classList.toggle('active');
+        contactModal.classList.add('active');
+        overlay.classList.add('open')
+    })
+}
+function closeContactModal() {
+    contactModalClose.addEventListener('click', (e) => {
+        contactModal.classList.remove('active');
+        overlay.classList.remove('open')
+    })
+    overlay.addEventListener('click', (e) => {
+        contactModal.classList.remove('active');
+        overlay.classList.remove('open')
     })
 }
 
+closeContactModal()
+
+
 if (contactModal) {
-    
+    let inputs = [modalUserEmail , modalUserTel , modalUserName]
+    inputs.forEach(input => {
+        const placeholderText = input.getAttribute('placeholder');
+
+        input.addEventListener('focus', function() {
+            this.setAttribute('placeholder', '');
+        });
+
+        input.addEventListener('blur', function() {
+            this.setAttribute('placeholder', placeholderText);
+        });
+
+
+
+        input.addEventListener('input', function() {
+
+            if (this.value.trim()) {
+                this.style.backgroundImage = 'none';
+            } else {
+                this.style.backgroundImage = `url('./assets/images/${this.getAttribute('class').split('-')[2]}.png')`;
+            }
+        });
+    })
+
+
+
+    const contactSubmit = document.querySelector('.contact-modal-submit');
+
+    contactSubmit.addEventListener('click', (event) => {
+        const nameInput = document.querySelector('.contact-modal-name');
+        const telInput = document.querySelector('.contact-modal-tel');
+        const emailInput = document.querySelector('.contact-modal-email');
+
+
+        function showError(input, message) {
+            const errorSpan = input.nextElementSibling;
+            errorSpan.textContent = message;
+            errorSpan.style.display = 'block';
+        }
+
+        function hideError(input) {
+            const errorSpan = input.nextElementSibling;
+            errorSpan.textContent = '';
+            errorSpan.style.display = 'none';
+        }
+
+
+        if (!nameInput.value.trim()) {
+            showError(nameInput, 'Введите имя');
+            nameInput.focus();
+            event.preventDefault();
+            return;
+        }
+        const nameRegex = /^[а-яА-ЯёЁ\s\-]+$/;
+        if (!nameRegex.test(nameInput.value)) {
+            showError(nameInput, 'Имя может содержать только ' +
+                'символы кириллического алфавита (а-я, А-Я), а также дефис (-) и пробел');
+            nameInput.focus();
+            event.preventDefault();
+            return;
+        }
+        hideError(nameInput);
+
+
+        if (!telInput.value.trim()) {
+            showError(telInput, 'Введите телефон');
+            telInput.focus();
+            event.preventDefault();
+            return;
+        }
+        hideError(telInput);
+
+        if (emailInput.value.trim()) {
+            const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+            if (!emailRegex.test(emailInput.value)) {
+                showError(emailInput, 'Неверный формат электронной почты');
+                emailInput.focus();
+                event.preventDefault();
+                return;
+            }
+        }
+        hideError(emailInput);
+    })
 }
+
+
+
 
 

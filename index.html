@@ -27,11 +27,21 @@
             <span class="contact-modal-subtitle">Мы с радостью вам поможем.
                 Закажите звонок и наш специалист свяжется с вами в ближайшее время!</span>
             <form>
-                <input class="contact-modal-name" type="text" placeholder="Ваше имя">
-                <input type="tel" class="contact-modal-tel" placeholder="Номер телефона">
-                <input class="contact-modal-email" type="email" placeholder="E-mail">
-                <button type="submit">Оставить заявку</button>
-                <p>Отправляя заявку я даю согласию на <a href="#">обработку персональных данных</a></p>
+                <div class="form-item">
+                    <input class="contact-modal-name" type="text" placeholder="Ваше имя" required>
+                    <span class="error-message name-error"></span>
+                </div>
+                <div class="form-item">
+                    <input type="tel" class="contact-modal-tel" placeholder="Номер телефона" required>
+                    <span class="error-message tel-error"></span>
+                </div>
+                <div class="form-item">
+                    <input class="contact-modal-email" type="email" placeholder="E-mail">
+                    <span class="error-message email-error"></span>
+                </div>
+
+                <button class="contact-modal-submit" type="submit">Оставить заявку</button>
+                <p class="acceptance">Отправляя заявку я даю согласию на <a href="#">обработку персональных данных</a></p>
             </form>
         </div>
     </div>

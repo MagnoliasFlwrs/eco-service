@@ -54,6 +54,11 @@ ul, li {
   padding: 0 14px 30px 35px;
   display: none;
 }
+@media (max-width: 768px) {
+  .city-modal {
+    padding: 0 14px 35px;
+  }
+}
 .city-modal.active {
   display: flex;
 }
@@ -83,6 +88,13 @@ ul, li {
   -moz-columns: 5;
   list-style-type: none;
 }
+@media (max-width: 768px) {
+  .city-modal .city-list {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+  }
+}
 .city-modal .city-list li {
   padding: 5px 10px;
   cursor: pointer;
@@ -102,7 +114,6 @@ ul, li {
 
 .contact-modal {
   max-width: 421px;
-  height: 553px;
   border-radius: 20px;
   position: fixed;
   top: 50%;
@@ -114,6 +125,10 @@ ul, li {
   z-index: 3;
   display: flex;
   flex-direction: column;
+  display: none;
+}
+.contact-modal.active {
+  display: flex;
 }
 .contact-modal .close-row {
   width: 100%;
@@ -126,6 +141,11 @@ ul, li {
 }
 .contact-modal .contact-modal-body {
   padding: 0 54px 44px;
+}
+@media (max-width: 768px) {
+  .contact-modal .contact-modal-body {
+    padding: 0 25px 44px;
+  }
 }
 .contact-modal .contact-modal-body .contact-modal-title {
   font-family: Montserrat;
@@ -152,6 +172,10 @@ ul, li {
   flex-direction: column;
   gap: 17px;
 }
+.contact-modal .contact-modal-body form .form-item .error-message {
+  color: red;
+  font-size: 14px;
+}
 .contact-modal .contact-modal-body form input {
   width: 100%;
   height: 60px;
@@ -162,7 +186,7 @@ ul, li {
   padding: 18px 27px;
 }
 .contact-modal .contact-modal-body form input.contact-modal-name {
-  background-image: url("./assets/images/user.png");
+  background-image: url("assets/images/name.png");
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center left 27px;
@@ -181,7 +205,7 @@ ul, li {
   color: #B1B1B1;
 }
 .contact-modal .contact-modal-body form input.contact-modal-tel {
-  background-image: url("./assets/images/phone-call.png");
+  background-image: url("assets/images/tel.png");
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center left 27px;
@@ -200,7 +224,7 @@ ul, li {
   color: #B1B1B1;
 }
 .contact-modal .contact-modal-body form input.contact-modal-email {
-  background-image: url("./assets/images/lets-icons_e-mail.png");
+  background-image: url("assets/images/email.png");
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center left 27px;
@@ -218,6 +242,35 @@ ul, li {
   text-align: left;
   color: #B1B1B1;
 }
+.contact-modal .contact-modal-body form .contact-modal-submit {
+  width: 100%;
+  height: 60px;
+  padding: 21px;
+  gap: 10px;
+  border-radius: 90px;
+  background: #F9D761;
+  font-family: Montserrat;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 18.29px;
+  text-align: center;
+  color: #000000;
+  border: none;
+  outline: none;
+  margin-top: 5px;
+}
+.contact-modal .contact-modal-body form .acceptance {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.63px;
+  text-align: center;
+  color: #000;
+}
+.contact-modal .contact-modal-body form .acceptance a {
+  text-decoration: underline;
+  color: #000;
+}
 
 .variant-1 {
   background-image: url("./assets/images/ecologist 1.png"), url("./assets/images/image 1.png");
@@ -234,6 +287,12 @@ ul, li {
   text-align: left;
   margin-bottom: 50px;
 }
+@media (max-width: 768px) {
+  .variant-1 .title {
+    font-size: 20px;
+    line-height: 100%;
+  }
+}
 .variant-1 .title span {
   font-family: Montserrat;
   font-size: 35px;
@@ -241,6 +300,12 @@ ul, li {
   line-height: 42.67px;
   text-align: left;
   color: #F9D761;
+}
+@media (max-width: 768px) {
+  .variant-1 .title span {
+    font-size: 20px;
+    line-height: 100%;
+  }
 }
 .variant-1 .calculator {
   padding: 30px;
@@ -250,6 +315,11 @@ ul, li {
   flex-direction: column;
   gap: 20px;
   max-width: 660px;
+}
+@media (max-width: 768px) {
+  .variant-1 .calculator {
+    padding: 20px;
+  }
 }
 .variant-1 .calculator .city-select .custom-input {
   width: 100%;
@@ -263,6 +333,11 @@ ul, li {
   justify-content: space-between;
   padding: 0 27px;
 }
+@media (max-width: 768px) {
+  .variant-1 .calculator .city-select .custom-input {
+    height: 50px;
+  }
+}
 .variant-1 .calculator .city-select .custom-input p {
   font-family: Montserrat;
   font-size: 14px;
@@ -270,6 +345,11 @@ ul, li {
   line-height: 17.07px;
   text-align: left;
   color: #B1B1B1;
+}
+@media (max-width: 768px) {
+  .variant-1 .calculator .city-select .custom-input p {
+    font-size: 10px;
+  }
 }
 .variant-1 .calculator .city-select .custom-input p.choose {
   font-family: Montserrat;
@@ -279,12 +359,23 @@ ul, li {
   text-align: left;
   color: #212121;
 }
+@media (max-width: 768px) {
+  .variant-1 .calculator .city-select .custom-input p.choose {
+    font-size: 10px;
+  }
+}
 .variant-1 .calculator .calc-title {
   font-family: Montserrat;
   font-size: 24px;
   font-weight: 600;
   line-height: 35.26px;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-title {
+    font-size: 18px;
+    line-height: 100%;
+  }
 }
 .variant-1 .calculator .custom-select {
   position: relative;
@@ -309,6 +400,11 @@ ul, li {
   text-align: left;
   color: #B1B1B1;
 }
+@media (max-width: 768px) {
+  .variant-1 .calculator .custom-select .custom-input p {
+    font-size: 10px;
+  }
+}
 .variant-1 .calculator .custom-select .custom-input p.choose {
   font-family: Montserrat;
   font-size: 14px;
@@ -316,6 +412,11 @@ ul, li {
   line-height: 17.07px;
   text-align: left;
   color: #212121;
+}
+@media (max-width: 768px) {
+  .variant-1 .calculator .custom-select .custom-input p.choose {
+    font-size: 10px;
+  }
 }
 .variant-1 .calculator .custom-select .custom-select-list {
   position: absolute;
@@ -345,6 +446,11 @@ ul, li {
   line-height: 100%; /* 20px */
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .variant-1 .calculator .custom-select .custom-select-list li {
+    font-size: 10px;
+  }
+}
 .variant-1 .calculator .custom-select .custom-select-list li:first-child {
   width: 100%;
   display: flex;
@@ -369,6 +475,11 @@ ul, li {
   color: #9C9C9C;
   padding: 0 20px;
 }
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-item span {
+    font-size: 9px;
+  }
+}
 .variant-1 .calculator .calc-item .capacity {
   display: flex;
   justify-content: space-between;
@@ -382,6 +493,11 @@ ul, li {
   line-height: 19.5px;
   text-align: left;
   color: #212121;
+}
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-item .capacity p {
+    font-size: 13px;
+  }
 }
 .variant-1 .calculator .calc-item .capacity .radio-inner fieldset {
   display: flex;
@@ -411,6 +527,12 @@ ul, li {
   font-weight: 400;
   line-height: 19.5px;
   text-align: left;
+}
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-item .capacity .radio-inner fieldset div [type=radio]:checked + label,
+  .variant-1 .calculator .calc-item .capacity .radio-inner fieldset div [type=radio]:not(:checked) + label {
+    font-size: 12px;
+  }
 }
 .variant-1 .calculator .calc-item .capacity .radio-inner fieldset div [type=radio]:checked + label:before,
 .variant-1 .calculator .calc-item .capacity .radio-inner fieldset div [type=radio]:not(:checked) + label:before {
@@ -478,6 +600,11 @@ ul, li {
   font-style: normal;
   color: #000000;
 }
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-item .range-wrapper span {
+    font-size: 13px;
+  }
+}
 .variant-1 .calculator .calc-item .range-wrapper #slider {
   width: 100%;
   height: 5px;
@@ -527,6 +654,11 @@ ul, li {
   text-align: left;
   color: #212121;
 }
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-item .passport p {
+    font-size: 13px;
+  }
+}
 .variant-1 .calculator .calc-item .passport .radio-inner fieldset {
   display: flex;
   gap: 20px;
@@ -555,6 +687,12 @@ ul, li {
   font-weight: 400;
   line-height: 19.5px;
   text-align: left;
+}
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-item .passport .radio-inner fieldset div [type=radio]:checked + label,
+  .variant-1 .calculator .calc-item .passport .radio-inner fieldset div [type=radio]:not(:checked) + label {
+    font-size: 12px;
+  }
 }
 .variant-1 .calculator .calc-item .passport .radio-inner fieldset div [type=radio]:checked + label:before,
 .variant-1 .calculator .calc-item .passport .radio-inner fieldset div [type=radio]:not(:checked) + label:before {
@@ -608,6 +746,13 @@ ul, li {
   padding: 0;
   padding: 0 20px;
 }
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-item .checkbox-list {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}
 .variant-1 .calculator .calc-item .checkbox-list li {
   margin-bottom: 10px;
 }
@@ -636,6 +781,12 @@ ul, li {
   border: 1px solid #C6C6C6;
   border-radius: 2px;
 }
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-item .checkbox-list li .checkbox {
+    width: 13px;
+    height: 13px;
+  }
+}
 .variant-1 .calculator .calc-item .checkbox-list li .custom-checkbox span {
   font-family: Montserrat;
   font-size: 16px;
@@ -645,6 +796,11 @@ ul, li {
   color: #000000;
   font-style: normal;
   padding: 0;
+}
+@media (max-width: 768px) {
+  .variant-1 .calculator .calc-item .checkbox-list li .custom-checkbox span {
+    font-size: 13px;
+  }
 }
 .variant-1 .calculator .calc-item .checkbox-list li .checkmark {
   position: absolute;
@@ -664,7 +820,7 @@ ul, li {
 }
 .variant-1 .calculator .calc-comment {
   resize: none;
-  width: 600px;
+  width: 100%;
   height: 150px;
   border-radius: 30px;
   border: 1px solid #D6D6D6;
@@ -706,6 +862,11 @@ ul, li {
   color: red !important;
   padding: 0 20px;
   display: none;
+}
+@media (max-width: 768px) {
+  .variant-1 .calculator .error-message {
+    font-size: 10px;
+  }
 }
 .variant-1 .calculator .error-message.active {
   display: block;
